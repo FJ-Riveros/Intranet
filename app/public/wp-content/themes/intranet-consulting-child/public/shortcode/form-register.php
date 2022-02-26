@@ -4,6 +4,17 @@
 function intranet_add_form_register_script()
 {
   wp_register_script("form_register_script", get_stylesheet_directory_uri() . "/public/assets/register.js", []);
+
+  /*We pass the intranet_url object to the register.js in order
+  to redirect the user when the register is successful
+  */
+  wp_localize_script(
+    "form_register_script",
+    "intranet_url",
+    [
+      "home_url" => home_url()
+    ]
+  );
 }
 add_action("wp_enqueue_scripts", "intranet_add_form_register_script");
 

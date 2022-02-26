@@ -18,7 +18,11 @@ add_action("rest_api_init", "intranet_api_register");
 function intranet_api_register_resolver($params)
 {
 
-  $response = "An error was found.";
+  //Feedback of the registration
+  $response = [
+    "message"                 => "",
+    "successful_registration" => false
+  ];
 
 
   //Check if the username is already in use
@@ -28,9 +32,10 @@ function intranet_api_register_resolver($params)
   $validEmail = get_user_by("email", $params["email"]);
 
   //Available credentials?
-  if ($validUsername) $response = "The username already exists";
-  else if ($validEmail) $response = "The email already exists";
+  if ($validUsername) $response["message"] = "The username already exists";
+  else if ($validEmail) $response["message"] = "The email already exists";
   else {
+
     //User credentials
     $args = [
       "user_login" => $params["username"],
@@ -41,8 +46,13 @@ function intranet_api_register_resolver($params)
 
     //Create the new user
     $insert_user = wp_insert_user($args);
-    if (is_numeric($insert_user)) $response = "The user was created!";
+
+    //If the new user registration is successful
+    if (is_numeric($insert_user)) {
+      $response["message"]                 = "The user was created!";
+      $response["successful_registration"] =  true;
+    }
   }
 
-  return ["response" => $response];
+  return $response;
 }

@@ -19,7 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
             })
             .then(res => res.json())
             .then(json => {
-                msg.innerHTML = json;
+                msg.innerHTML = json?.message;
+                if (json.successful_registration) {
+                    setTimeout(() => {
+                        window.location.href = intranet_url.home_url;
+                    }, 1500);
+                }
             })
             .catch(err => {
                 console.log(`There was an error ${err}`);
