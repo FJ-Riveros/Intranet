@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
             })
             .then(res => res.json())
             .then(json => {
-                msg.innerHTML = json.response;
+                msg.innerHTML = json;
             })
             .catch(err => {
                 console.log(`There was an error ${err}`);

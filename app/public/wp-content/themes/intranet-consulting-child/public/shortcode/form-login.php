@@ -4,6 +4,17 @@
 function intranet_add_form_login_script()
 {
   wp_register_script("form_login_script", get_stylesheet_directory_uri() . "/public/assets/login.js", []);
+
+  /*We pass the intranet_url object to the login.js in order
+  to redirect the user when the login is successful
+  */
+  wp_localize_script(
+    "form_login_script",
+    "intranet_url",
+    [
+      "home_url" => home_url()
+    ]
+  );
 }
 add_action("wp_enqueue_scripts", "intranet_add_form_login_script");
 

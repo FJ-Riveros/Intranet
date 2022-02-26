@@ -7,7 +7,7 @@ function intranet_api_register()
     "intranet/v1",
     "register",
     [
-      "method"   => "POST",
+      "methods"   => "POST",
       "callback" => "intranet_api_register_resolver"
     ]
   );
@@ -18,7 +18,8 @@ add_action("rest_api_init", "intranet_api_register");
 function intranet_api_register_resolver($params)
 {
 
-  $response = "The user was created!";
+  $response = "An error was found.";
+
 
   //Check if the username is already in use
   $validUsername = get_user_by("login", $params["username"]);
@@ -39,7 +40,8 @@ function intranet_api_register_resolver($params)
     ];
 
     //Create the new user
-    wp_insert_user($args);
+    $insert_user = wp_insert_user($args);
+    if (is_numeric($insert_user)) $response = "The user was created!";
   }
 
   return ["response" => $response];

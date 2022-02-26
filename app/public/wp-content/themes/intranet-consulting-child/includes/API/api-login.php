@@ -7,7 +7,7 @@ function intranet_api_login()
     "intranet/v1",
     "login",
     [
-      "method"   => "POST",
+      "methods"   => "POST",
       "callback" => "intranet_api_login_resolver"
     ]
   );
@@ -18,18 +18,15 @@ add_action("rest_api_init", "intranet_api_login");
 function intranet_api_login_resolver($params)
 {
 
+
   $credentials = [
     "user_login"    => $params["username"],
     "user_password" => $params["password"],
     "remember"      => true
   ];
 
+  //Try to login with the credentials provided
   $user = wp_signon($credentials);
 
-  if ($user->get_error_message() == "") {
-    wp_redirect(home_url());
-    exit;
-  }
-
-  return ["response" => $user->get_error_message()];
+  return $user->get_error_message();
 }
