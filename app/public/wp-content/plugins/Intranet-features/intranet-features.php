@@ -9,7 +9,6 @@
    License: GPL2
    */
 
-
 define("INTRANET_PLUGIN_FOLDER_PATH", plugin_dir_path(__FILE__));
 
 // Shortcodes/Forms
@@ -20,24 +19,31 @@ require_once INTRANET_PLUGIN_FOLDER_PATH . "/public/shortcode/form-register.php"
 require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-registro.php";
 require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-login.php";
 
-
 //Creation of the PT that assign tasks to the workers
 function intranet_create_pt_tasks()
 {
   $args = [
-    "labels"       =>
+    "labels"              =>
     [
       "name"          => "Tasks",
       "singular_name" => "Task",
     ],
-    "public"        => true,
-    "rewrite"       => ["slug" => "tasks"],
-    "show_in_rest"  => true,
-    "show_in_menu"  => true,
-    "menu_icon"     => "dashicons-schedule",
-    "menu_position" => 2
+    "public"              => true,
+    "rewrite"             => ["slug" => "tasks"],
+    "show_in_rest"        => true,
+    "show_in_menu"        => true,
+    "menu_icon"           => "dashicons-schedule",
+    "menu_position"       => 2,
+    "hierarchical"        => true,
+    'publicly_queryable'  => true,
+    "capability_type"     => "page",
+    "has_archive"         => false,
+    "supports"            => [
+      "title", "editor", "custom-fields", "thumbnail"
+    ],
   ];
   register_post_type("intranet_tasks", $args);
+  flush_rewrite_rules();
 }
 
 add_action("init", "intranet_create_pt_tasks");
