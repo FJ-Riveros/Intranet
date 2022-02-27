@@ -10,26 +10,34 @@
    */
 
 
-define("INTRANET_FOLDER_PATH", plugin_dir_path(__FILE__));
+define("INTRANET_PLUGIN_FOLDER_PATH", plugin_dir_path(__FILE__));
 
 // Shortcodes/Forms
-require_once INTRANET_FOLDER_PATH . "/public/shortcode/form-login.php";
-require_once INTRANET_FOLDER_PATH . "/public/shortcode/form-register.php";
+require_once INTRANET_PLUGIN_FOLDER_PATH . "/public/shortcode/form-login.php";
+require_once INTRANET_PLUGIN_FOLDER_PATH . "/public/shortcode/form-register.php";
 
 //API REST routes
-require_once INTRANET_FOLDER_PATH . "/includes/API/api-registro.php";
-require_once INTRANET_FOLDER_PATH . "/includes/API/api-login.php";
+require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-registro.php";
+require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-login.php";
 
-function intranet_assets()
-{
-  $parent_style = "parent-style";
-  wp_register_style("bootstrap", "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css", []);
-  wp_enqueue_style($parent_style, get_template_directory_uri() . "/style.css", ["bootstrap"], "1.0", "all");
-}
-add_action("wp_enqueue_scripts", "intranet_assets");
 
-function intranet_register_main_menu()
+//Creation of the PT that assign tasks to the workers
+function intranet_create_pt_tasks()
 {
-  register_nav_menu("intranet_primary_menu", "Intranet Primary Menu");
+  $args = [
+    "labels"       =>
+    [
+      "name"          => "Tasks",
+      "singular_name" => "Task",
+    ],
+    "public"        => true,
+    "rewrite"       => ["slug" => "tasks"],
+    "show_in_rest"  => true,
+    "show_in_menu"  => true,
+    "menu_icon"     => "dashicons-schedule",
+    "menu_position" => 2
+  ];
+  register_post_type("intranet_tasks", $args);
 }
-add_action("init", "intranet_register_main_menu");
+
+add_action("init", "intranet_create_pt_tasks");
