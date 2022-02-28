@@ -1,1 +1,8 @@
-<h1>Hola</h1>
+<?php
+get_header();
+
+
+the_content();
+
+
+get_footer();
