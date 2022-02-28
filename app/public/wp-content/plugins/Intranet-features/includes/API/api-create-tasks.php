@@ -18,16 +18,23 @@ add_action("rest_api_init", "intranet_api_create_tasks");
 function intranet_api_create_tasks_resolver($params)
 {
 
-  var_dump($params);
-  // $credentials = [
-  //   "user_login"    => $params["username"],
-  //   "user_password" => $params["password"],
-  //   "remember"      => true
-  // ];
+  //Get the data from the form
+  $data = $params->get_params();
 
-  return "hola";
-  //Try to login with the credentials provided
-  // $user = wp_signon($credentials);
+  $content = "";
+  foreach ($data as $singleData) {
+    $content .= "<p>" . $singleData . "</p>";
+  }
 
-  // return $user->get_error_message();
+  //Create a new object from the CPT create_tasks
+  $new_daily_tasks_instance =
+    wp_insert_post([
+      "post_title" => "Daily Tasks " . date("d/m/Y"),
+      "post_content" => $content,
+      "post_type" => "intranet_tasks"
+    ]);
+
+  //Returns int if the instance was created successfully or WP_ERROR_OBJECT
+  //if there was an error
+  return $new_daily_tasks_instance;
 }

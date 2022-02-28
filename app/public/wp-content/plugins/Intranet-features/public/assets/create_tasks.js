@@ -22,8 +22,11 @@ window.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(json => {
                 //Redirect the user if the creation of the tasks is successful
-                // if (!json) window.location.href = intranet_url.home_url;
-                // else msg.innerHTML = json;
+                if (json) {
+                    msg.innerHTML = "The daily task was created!"
+                    setTimeout(() => window.location.href = intranet_url.home_url, 1500);
+                } else msg.innerHTML = json;
+
             })
             .catch(err => console.log(`There was an error: ${err}`))
     }
