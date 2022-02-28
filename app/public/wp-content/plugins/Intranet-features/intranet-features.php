@@ -19,6 +19,7 @@ require_once INTRANET_PLUGIN_FOLDER_PATH . "/public/shortcode/form-create-tasks.
 //API REST routes
 require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-registro.php";
 require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-login.php";
+require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-create-tasks.php";
 
 //Add the employee role when the plugin is activated
 function add_roles_on_plugin_activation()
