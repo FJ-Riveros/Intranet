@@ -41,7 +41,7 @@ function intranet_api_register_resolver($params)
       "user_login" => $params["username"],
       "user_pass"  => $params["password"],
       "user_email" => $params["email"],
-      "role"       => "staff"
+      "role"       => "employee"
     ];
 
     //Create the new user

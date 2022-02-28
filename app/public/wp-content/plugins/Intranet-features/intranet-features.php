@@ -14,10 +14,23 @@ define("INTRANET_PLUGIN_FOLDER_PATH", plugin_dir_path(__FILE__));
 // Shortcodes/Forms
 require_once INTRANET_PLUGIN_FOLDER_PATH . "/public/shortcode/form-login.php";
 require_once INTRANET_PLUGIN_FOLDER_PATH . "/public/shortcode/form-register.php";
+require_once INTRANET_PLUGIN_FOLDER_PATH . "/public/shortcode/form-create-tasks.php";
 
 //API REST routes
 require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-registro.php";
 require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-login.php";
+
+//Add the employee role when the plugin is activated
+function add_roles_on_plugin_activation()
+{
+  add_role("employee", "Employee", [
+    "read"       => true,
+    "edit_posts" => false
+  ]);
+}
+
+register_activation_hook(__FILE__, "add_roles_on_plugin_activation");
+
 
 //Creation of the PT that assign tasks to the workers
 function intranet_create_pt_tasks()
@@ -43,7 +56,15 @@ function intranet_create_pt_tasks()
     ],
   ];
   register_post_type("intranet_tasks", $args);
+
   flush_rewrite_rules();
 }
 
 add_action("init", "intranet_create_pt_tasks");
+
+
+// wp_insert_post([
+//   "post_title" => "Esto es una prueba",
+//   "post_content" => "<h1>Holaaa</h1>",
+//   "post_type" => "intranet_tasks"
+// ]);
