@@ -14,12 +14,13 @@ window.addEventListener("DOMContentLoaded", () => {
         let parseData = new URLSearchParams(data);
 
         fetch("http://intranetfjr.local/wp-json/intranet/v1/register", {
-            method: "POST",
-            body: parseData
-        })
+                method: "POST",
+                body: parseData
+            })
             .then(res => res.json())
             .then(json => {
-                msg.innerHTML = json?.message;
+                //Personalized message wheter the user is created or not
+                msg.innerHTML = `<div class="alert ${json.successful_registration ? "alert-success" : "alert-danger"} text-center">${json?.message}</div>`;
                 /*
                 If the user registered successfully he gets redirected 
                 in 1.5 seconds.

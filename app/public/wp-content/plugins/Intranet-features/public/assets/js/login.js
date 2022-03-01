@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 //Redirect the user if the login is successful
                 if (!json) window.location.href = intranet_url.home_url;
                 //Assign an error msg
-                else msg.innerHTML = json;
+                else msg.innerHTML = `<div class="alert alert-danger text-center">${json}</div>`;
             })
             .catch(err => console.log(`There was an error: ${err}`))
     }

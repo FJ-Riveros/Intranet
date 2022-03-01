@@ -38,7 +38,7 @@ function intranet_add_form_login()
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <a href="' . get_permalink(get_page_by_title("Register")) . '">Not registered?</a>
-            <div class="statusMsg"></div>
+            <div class="statusMsg mt-2"></div>
           </div>
         </div>
       </form>
