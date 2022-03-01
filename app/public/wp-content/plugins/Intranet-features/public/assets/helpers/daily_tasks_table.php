@@ -11,7 +11,7 @@ function createTasksTable($params)
   //The structure of the table that shows the tasks from the employees
   $tasksTable =
     '
-    <table class="table table-striped">
+    <table class="table table-hover">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Employee ID</th>
@@ -39,10 +39,10 @@ function createTasksTable($params)
 
     $tasksTable .=
       '
-      <tr>
+      <tr class="' . ($singleData == '' ? 'table-danger' : '') . '">
         <th scope="row">' . $employeeID . '</th>
         <td>' . $employeeName . '</td>
-        <td>' . $singleData . '</td>
+        <td>' . ($singleData == '' ? 'No task' : $singleData) . '</td>
       </tr>
     ';
   }

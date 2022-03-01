@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(json => {
                 //Redirect the user if the creation of the tasks is successful
-                if (json) {
+                if (!isNaN(json)) {
                     msg.innerHTML = "The daily task was created!"
                     //Redirect in 1.5s
                     setTimeout(() => window.location.href = intranet_url.home_url, 1500);
