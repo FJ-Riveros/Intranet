@@ -31,7 +31,7 @@ function intranet_api_register_resolver($params)
   //Check if the email is already in use
   $validEmail = get_user_by("email", $params["email"]);
 
-  //Available credentials?
+  //Checking the credentials provided
   if ($validUsername) $response["message"] = "The username already exists";
   else if ($validEmail) $response["message"] = "The email already exists";
   else {

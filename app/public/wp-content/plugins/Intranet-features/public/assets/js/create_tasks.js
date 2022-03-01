@@ -26,7 +26,6 @@ window.addEventListener("DOMContentLoaded", () => {
                     msg.innerHTML = "The daily task was created!"
                     setTimeout(() => window.location.href = intranet_url.home_url, 1500);
                 } else msg.innerHTML = json;
-
             })
             .catch(err => console.log(`There was an error: ${err}`))
     }

@@ -3,7 +3,7 @@
 //Registering the specific script for the create_tasks form
 function intranet_add_form_create_tasks_script()
 {
-  wp_register_script("form_create_tasks_script", plugins_url("../assets/create_tasks.js", __FILE__), []);
+  wp_register_script("form_create_tasks_script", plugins_url("../assets/js/create_tasks.js", __FILE__), []);
 
   /*Passing the intranet_url object to the create_tasks.js in order
   to redirect the user when the creation of the task is successful
@@ -44,8 +44,8 @@ function intranet_add_task_creator()
       <form id="create-tasks-form"  method="POST">
         <div class="row d-flex justify-content-center">
           <div class="col-4 d-flex flex-column">'
-    . $userFields .
-    '
+            . $userFields .
+            '
             <datalist id="tasks">
               <option>Writing and testing code for new programs</option>
               <option>Updating existing programs</option>

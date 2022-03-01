@@ -3,7 +3,7 @@
 //Registering the specific script for the register form
 function intranet_add_form_register_script()
 {
-  wp_register_script("form_register_script", plugins_url("../assets/register.js", __FILE__), []);
+  wp_register_script("form_register_script", plugins_url("../assets/js/register.js", __FILE__), []);
 
   /*We pass the intranet_url object to the register.js in order
   to redirect the user when the register is successful

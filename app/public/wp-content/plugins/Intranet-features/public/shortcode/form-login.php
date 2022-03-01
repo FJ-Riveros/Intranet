@@ -3,7 +3,7 @@
 //Registering the specific script for the login form
 function intranet_add_form_login_script()
 {
-  wp_register_script("form_login_script", plugins_url("../assets/login.js", __FILE__), []);
+  wp_register_script("form_login_script", plugins_url("../assets/js/login.js", __FILE__), []);
 
   /*We pass the intranet_url object to the login.js in order
   to redirect the user when the login is successful
