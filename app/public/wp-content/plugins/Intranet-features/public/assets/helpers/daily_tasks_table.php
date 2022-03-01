@@ -1,5 +1,8 @@
 <?php
-
+/*
+This function takes the data from the daily tasks form and converts 
+it intto a table that display that data.
+*/
 function createTasksTable($params)
 {
   //Get the data from the form
@@ -23,6 +26,8 @@ function createTasksTable($params)
   $employeeID = 0;
   $employeeInfo = "";
   $employeeName = "";
+
+  //Loop through every employee
   foreach ($data as $key => $singleData) {
 
     //Get the ID from the employee
@@ -37,7 +42,7 @@ function createTasksTable($params)
       <tr>
         <th scope="row">' . $employeeID . '</th>
         <td>' . $employeeName . '</td>
-        <td>' . $singleData . '<td>
+        <td>' . $singleData . '</td>
       </tr>
     ';
   }

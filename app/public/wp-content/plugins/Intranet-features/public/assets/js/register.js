@@ -14,14 +14,16 @@ window.addEventListener("DOMContentLoaded", () => {
         let parseData = new URLSearchParams(data);
 
         fetch("http://intranetfjr.local/wp-json/intranet/v1/register", {
-                method: "POST",
-                body: parseData
-            })
+            method: "POST",
+            body: parseData
+        })
             .then(res => res.json())
             .then(json => {
                 msg.innerHTML = json?.message;
-                //If the user registered successfully he gets redirected 
-                //in 1.5 seconds.
+                /*
+                If the user registered successfully he gets redirected 
+                in 1.5 seconds.
+                */
                 if (json.successful_registration) {
                     setTimeout(() => {
                         window.location.href = intranet_url.home_url;

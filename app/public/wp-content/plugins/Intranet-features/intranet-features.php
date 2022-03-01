@@ -24,16 +24,20 @@ require_once INTRANET_PLUGIN_FOLDER_PATH . "/includes/API/api-create-tasks.php";
 //Add the employee role when the plugin is activated
 function add_roles_on_plugin_activation()
 {
-  add_role("employee", "Employee", [
-    "read"       => true,
-    "edit_posts" => false
-  ]);
+  add_role(
+    "employee",
+    "Employee",
+    [
+      "read"       => true,
+      "edit_posts" => false
+    ]
+  );
 }
 
 register_activation_hook(__FILE__, "add_roles_on_plugin_activation");
 
 
-//Creation of the PT that assign tasks to the workers
+//Creation of the CPT that assign tasks to the employees
 function intranet_create_pt_tasks()
 {
   $args = [
@@ -62,10 +66,3 @@ function intranet_create_pt_tasks()
 }
 
 add_action("init", "intranet_create_pt_tasks");
-
-
-// wp_insert_post([
-//   "post_title" => "Esto es una prueba",
-//   "post_content" => "<h1>Holaaa</h1>",
-//   "post_type" => "intranet_tasks"
-// ]);

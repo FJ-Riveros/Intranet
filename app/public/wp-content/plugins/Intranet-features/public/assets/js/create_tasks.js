@@ -5,7 +5,6 @@ window.addEventListener("DOMContentLoaded", () => {
     //Selector for the response msg
     let msg = document.querySelector(".statusMsg");
 
-
     createTasksForm.onsubmit = (e) => {
         e.preventDefault();
 
@@ -24,6 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 //Redirect the user if the creation of the tasks is successful
                 if (json) {
                     msg.innerHTML = "The daily task was created!"
+                    //Redirect in 1.5s
                     setTimeout(() => window.location.href = intranet_url.home_url, 1500);
                 } else msg.innerHTML = json;
             })
