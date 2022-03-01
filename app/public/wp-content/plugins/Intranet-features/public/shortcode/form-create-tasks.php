@@ -54,7 +54,7 @@ function intranet_add_task_creator()
               <option>Rewriting programs for different operating systems</option>
             </datalist>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <div class="statusMsg mt-2"></div>
+            <div class="statusMsg mt-3"></div>
           </div>
         </div>
       </form>

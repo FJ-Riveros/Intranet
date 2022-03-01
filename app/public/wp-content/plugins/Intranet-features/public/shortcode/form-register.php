@@ -40,7 +40,7 @@ function intranet_add_form_register()
               <input class="form-control" name="email" type="email" placeholder="Enter your email" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <div class="statusMsg mt-2"></div>
+            <div class="statusMsg mt-3"></div>
           </div>
         </div>
       </form>
