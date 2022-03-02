@@ -12,14 +12,14 @@
   <?php wp_body_open(); ?>
   <header class="header">
     <div class="container">
-      <div class="row">
+      <div class="row d-flex justify-content-between">
         <div class="header__logo col-2">
           <a href="#">
             <img src="<?php echo get_template_directory_uri() ?>/assets/img/intranet.png" alt="menu icon" height="70" width="70">
           </a>
         </div>
 
-        <div class="header__menu col-5 col-md-4 col-sm-8 offset-sm-2 offset-md-6 offset-5">
+        <div class="header__menu col-8 col-md-6 col-lg-4">
           <?php wp_nav_menu(
             [
               "menu" => 'menu-principal'
