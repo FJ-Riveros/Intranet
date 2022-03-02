@@ -36,6 +36,14 @@ function add_roles_on_plugin_activation()
 
 register_activation_hook(__FILE__, "add_roles_on_plugin_activation");
 
+//Removes the employee role when the plugin is deactivated
+function remove_roles_on_plugin_deactivation()
+{
+  remove_role("employee");
+}
+
+register_deactivation_hook(__FILE__, "remove_roles_on_plugin_activation");
+
 
 //Creation of the CPT that assign tasks to the employees
 function intranet_create_pt_tasks()
