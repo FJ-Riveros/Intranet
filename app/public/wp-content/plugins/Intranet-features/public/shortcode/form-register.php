@@ -24,6 +24,7 @@ function intranet_add_form_register()
   wp_enqueue_script("form_register_script");
   return '
     <div class="container content">
+      <h1 class="text-center">Register</h1>
       <form id="register-form">
         <div class="row d-flex justify-content-center">
           <div class="col-4 d-flex flex-column">
