@@ -31,4 +31,4 @@
   </header>
 
   <main class="productos">
-    <div class="container-fluid gx-5">
+    <div class="container-fluid content gx-5">

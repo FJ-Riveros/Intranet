@@ -10,7 +10,8 @@ function intranet_assets()
     wp_register_style("bootstrap-icons", "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css", []);
     wp_register_style("footer-style", get_template_directory_uri() . "/assets/css/footer.css", []);
     wp_register_style("header-style", get_template_directory_uri() . "/assets/css/header.css", []);
-    wp_enqueue_style("intranet-style", get_template_directory_uri() . "/assets/css/style.css", ["bootstrap", "bootstrap-icons", "footer-style", "header-style"], "1.0", "all");
+    wp_register_style("content-style", get_template_directory_uri() . "/assets/css/content.css", []);
+    wp_enqueue_style("intranet-style", get_template_directory_uri() . "/style.css", ["bootstrap", "bootstrap-icons", "footer-style", "header-style", "content-style"], "1.0", "all");
 }
 add_action("wp_enqueue_scripts", "intranet_assets");
 
