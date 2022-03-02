@@ -40,12 +40,15 @@ function intranet_add_task_creator()
 
   //Form body
   return '
-    <div class="container">
+    <div class="container content">
+      <h1>Register tasks</h1>
+      <p class="w-50 text-center">Here you can register the daily task for each employee, after you submit the data it will be converted into a table. You can edit this table later on!</p>
+      <h3 class="text-center">Assign the daily task!</h3>
       <form id="create-tasks-form"  method="POST">
         <div class="row d-flex justify-content-center">
           <div class="col-4 d-flex flex-column">'
-            . $userFields .
-            '
+    . $userFields .
+    '
             <datalist id="tasks">
               <option>Writing and testing code for new programs</option>
               <option>Updating existing programs</option>
@@ -53,7 +56,7 @@ function intranet_add_task_creator()
               <option>Secure programs against cybersecurity threats</option>
               <option>Rewriting programs for different operating systems</option>
             </datalist>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-info">Submit</button>
             <div class="statusMsg mt-3"></div>
           </div>
         </div>

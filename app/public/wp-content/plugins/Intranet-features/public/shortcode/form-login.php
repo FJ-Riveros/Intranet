@@ -24,7 +24,8 @@ function intranet_add_form_login()
   wp_enqueue_script("form_login_script");
 
   return '
-    <div class="container">
+    <div class="container content mt-4">
+      <h1 class="text-center">Login</h1>
       <form id="login-form" action="" method="POST">
         <div class="row d-flex justify-content-center">
           <div class="col-4 d-flex flex-column">
@@ -36,7 +37,7 @@ function intranet_add_form_login()
               <label for="password">Password</label>
               <input class="form-control" name="password" type="password" placeholder="Enter your password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-info">Submit</button>
             <a href="' . get_permalink(get_page_by_title("Register")) . '">Not registered?</a>
             <div class="statusMsg mt-3"></div>
           </div>

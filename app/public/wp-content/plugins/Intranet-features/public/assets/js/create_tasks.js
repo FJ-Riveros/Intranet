@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
             .then(json => {
                 //Redirect the user if the creation of the tasks is successful
                 if (!isNaN(json)) {
-                    msg.innerHTML = `<div class="alert alert-success text-center">The daily task was created!</div>`;
+                    msg.innerHTML = `<div class="alert alert-info text-center">The daily task was created!</div>`;
                     //Redirect in 1.5s
                     setTimeout(() => window.location.href = intranet_url.home_url, 1500);
                 } else msg.innerHTML = `<div class="alert alert-danger text-center">${json}</div>`;

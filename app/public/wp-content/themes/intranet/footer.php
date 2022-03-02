@@ -12,7 +12,7 @@
               <div class="col-12 d-flex justify-content-center">
                 <img src="<?php echo get_template_directory_uri() . "/assets/img/intranet.png" ?>" alt="" class="img-fluid" height="90" width="90">
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure consequatur deleniti neque temporibus facilis corporis, inventore officia consequuntur esse fugit debitis architecto amet, molestiae quod dolorum quaerat numquam officiis rem?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure consequatur deleniti neque temporibus facilis corporis, inventore officia.</p>
               <ul class="contact-details">
                 <li>
                   <span class="icon-earphones"></span> Call Us:

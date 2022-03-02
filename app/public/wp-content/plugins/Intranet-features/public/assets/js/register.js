@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(json => {
                 //Personalized message wheter the user is created or not
-                msg.innerHTML = `<div class="alert ${json.successful_registration ? "alert-success" : "alert-danger"} text-center">${json?.message}</div>`;
+                msg.innerHTML = `<div class="alert ${json.successful_registration ? "alert-info" : "alert-danger"} text-center">${json?.message}</div>`;
                 /*
                 If the user registered successfully he gets redirected 
                 in 1.5 seconds.

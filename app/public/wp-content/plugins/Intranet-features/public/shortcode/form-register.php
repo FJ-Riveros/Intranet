@@ -23,7 +23,7 @@ function intranet_add_form_register()
 {
   wp_enqueue_script("form_register_script");
   return '
-    <div class="container">
+    <div class="container content">
       <form id="register-form">
         <div class="row d-flex justify-content-center">
           <div class="col-4 d-flex flex-column">
@@ -39,7 +39,7 @@ function intranet_add_form_register()
               <label for="email">Email</label>
               <input class="form-control" name="email" type="email" placeholder="Enter your email" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-info">Submit</button>
             <div class="statusMsg mt-3"></div>
           </div>
         </div>

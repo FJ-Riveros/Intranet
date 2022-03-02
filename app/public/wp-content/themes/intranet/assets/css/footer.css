@@ -120,6 +120,17 @@ a {
     font-size: 18px;
 }
 
+.footer-area {
+    margin-top: auto;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 .mini-footer {
     background: #192027;
     text-align: center;

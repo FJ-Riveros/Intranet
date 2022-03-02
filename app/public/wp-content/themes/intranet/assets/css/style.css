@@ -1,0 +1,27 @@
+.post__card p {
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+}
+
+.principal {
+    margin-top: 50px;
+}
+
+h1 {
+    color: #48b4e2;
+}
+
+.content {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+form {
+    width: 100%;
+}
