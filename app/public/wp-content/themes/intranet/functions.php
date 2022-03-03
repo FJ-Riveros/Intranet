@@ -39,18 +39,3 @@ function intranet_theme_supports()
 }
 
 add_action("after_setup_theme", "intranet_theme_supports");
-
-function intranet_add_sidebar()
-{
-    register_sidebar(
-        array(
-            'name' => 'Pie de página',
-            'id' => 'pie-pagina',
-            'before_widget' => '',
-            'after_widget' => ''
-        )
-    );
-}
-
-
-add_action("widgets_init", "intranet_add_sidebar");

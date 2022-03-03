@@ -30,5 +30,5 @@
     </div>
   </header>
 
-  <main class="productos">
-    <div class="container-fluid content gx-5">
+  <main class="main">
+    <div class="container content">

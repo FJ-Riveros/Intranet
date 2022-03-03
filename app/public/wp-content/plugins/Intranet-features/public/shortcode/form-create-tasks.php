@@ -48,7 +48,10 @@ function intranet_add_task_creator()
         <div class="row d-flex justify-content-center">
           <div class="col-4 d-flex flex-column">'
     . $userFields .
-    '
+    '       <div class="form-group mb-4">
+              <label for="observations">Observations</label>
+              <textarea class="form-control" name="observations" id="observations" rows="3" placeholder="Write any information that you want to display to the employees."></textarea>
+            </div>
             <datalist id="tasks">
               <option>Writing and testing code for new programs</option>
               <option>Updating existing programs</option>

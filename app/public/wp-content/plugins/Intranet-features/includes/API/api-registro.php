@@ -40,6 +40,8 @@ function intranet_api_register_resolver($params)
     $args = [
       "user_login" => $params["username"],
       "user_pass"  => $params["password"],
+      "first_name" => $params["first_name"],
+      "last_name"  => $params["last_name"],
       "user_email" => $params["email"],
       "role"       => "employee"
     ];

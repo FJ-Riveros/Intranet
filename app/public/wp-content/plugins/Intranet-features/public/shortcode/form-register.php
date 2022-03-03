@@ -37,6 +37,14 @@ function intranet_add_form_register()
               <input class="form-control" name="password" type="password" placeholder="Enter your password" required>
             </div>
             <div class="form-group mb-4">
+              <label for="first_name">First Name</label>
+              <input class="form-control" name="first_name" type="text" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group mb-4">
+              <label for="last_name">Last Name</label>
+              <input class="form-control" name="last_name" type="text" placeholder="Enter your last name" required>
+            </div>
+            <div class="form-group mb-4">
               <label for="email">Email</label>
               <input class="form-control" name="email" type="email" placeholder="Enter your email" required>
             </div>

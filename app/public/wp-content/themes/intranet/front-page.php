@@ -2,6 +2,8 @@
 
 get_header();
 ?>
+<div class="banner-img">
+</div>
 <div class="container content principal">
   <div class="banner row d-flex justify-content-center">
     <h1 class="text-center col-12">Our Services</h1>
@@ -15,7 +17,7 @@ get_header();
         the_post();
     ?>
         <div class="post__card col-12 col-lg-5 d-flex justify-content-around flex-column align-items-center">
-          <?= the_post_thumbnail() ?>
+          <a href="<?= the_permalink() ?>"><?= the_post_thumbnail() ?></a>
           <h3 class="box__title mt-2"><?= the_title() ?></h3>
           <?= the_content() ?>
         </div>
